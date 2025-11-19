@@ -1,19 +1,23 @@
-import { resolve } from "path";
-import { defineConfig } from "vite";
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { defineConfig } from 'vite';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
-  root: "src/",
+  root: 'src/',
 
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        cart: resolve(__dirname, "src/cart/index.html"),
-        checkout: resolve(__dirname, "src/checkout/index.html"),
-        checkedout: resolve(__dirname, "src/checkout/success.html"),
-        product: resolve(__dirname, "src/product_pages/index.html"),
-        listing: resolve(__dirname, "src/product-listing/index.html"),
+        main: resolve(__dirname, 'src/index.html'),
+        cart: resolve(__dirname, 'src/cart/index.html'),
+        checkout: resolve(__dirname, 'src/checkout/index.html'),
+        checkedout: resolve(__dirname, 'src/checkout/success.html'),
+        product: resolve(__dirname, 'src/product_pages/index.html'),
+        listing: resolve(__dirname, 'src/product-listing/index.html'),
       },
     },
   },
