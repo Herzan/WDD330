@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/destination.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/8fc9e95924.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Destinations | Nicaragua Adventure</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="hero-slider full-content-width">
+        <div class="arrow-container">
+          <button class="slide-arrow" id="slide-arrow-prev" type="button">
+            &#8249;
+          </button>
+        </div>
+        <ul id="slider">
+          <li id="slide-placeholder" class="slide">
+            <img
+              id="slide-image-1"
+              class="slide-image"
+              src="/images/slider-placeholder.jpg"
+              alt="slider loading"
+            />
+          </li>
+        </ul>
+        <div class="arrow-container">
+          <button class="slide-arrow" id="slide-arrow-next" type="button">
+            &#8250;
+          </button>
+        </div>
+      </div>
+      
+      <!-- DESTINATION INFORMATION SECTION -->
+      <section class="destination-info content-width content-back">
+        <div class="destination-header">
+          <h1 id="planet-name">Destination Name</h1>
+          <div class="destination-stats">
+            <div class="stat-item">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <span class="stat-label">Climate</span>
+                <span id="climate" class="stat-value">Loading climate...</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-mountain"></i>
+              <div>
+                <span class="stat-label">Terrain</span>
+                <span id="terrain" class="stat-value">Loading terrain...</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-users"></i>
+              <div>
+                <span class="stat-label">Population</span>
+                <span id="population" class="stat-value">Loading population...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="description content-width content-back">
+        <h2>About This Destination</h2>
+        <p id="destination-description">Loading destination information...</p>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

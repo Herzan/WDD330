@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "src": "/images/rio.jpg",
+      "alt": "A peaceful river in Río San Juan flowing through lush tropical forests"
+    },
+    {
+      "src": "/images/rio.jpg",
+      "alt": "A scenic waterfall in Río San Juan surrounded by dense jungle greenery"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Managua",
+    "rotation_period": "24",
+    "orbital_period": "365",
+    "diameter": "343", 
+    "climate": "tropical wet and dry",
+    "gravity": "1 standard",
+    "terrain": "urban, lakes, lowlands",
+    "surface_water": "5",
+    "population": "1150000",
+    "residents": [
+      "https://example.com/api/people/1/",
+      "https://example.com/api/people/2/",
+      "https://example.com/api/people/3/",
+      "https://example.com/api/people/4/",
+      "https://example.com/api/people/5/"
+    ],
+    "films": [
+      "https://example.com/api/films/1/",
+      "https://example.com/api/films/2/"
+    ],
+    "created": "2025-12-03T22:00:00Z",
+    "edited": "2025-12-03T22:00:00Z",
+    "url": "https://example.com/api/planets/managua/"
+  },
+  
+  [
+    {
+      "name": "Managua",
+      "rotation_period": "24",
+      "orbital_period": "365",
+      "diameter": "343",
+      "climate": "tropical wet and dry",
+      "gravity": "1 standard",
+      "terrain": "urban, lakes, lowlands",
+      "surface_water": "5",
+      "population": "1150000",
+      "residents": [
+        "https://example.com/api/people/1/",
+        "https://example.com/api/people/2/",
+        "https://example.com/api/people/3/",
+        "https://example.com/api/people/4/",
+        "https://example.com/api/people/5/"
+      ],
+      "films": [
+        "https://example.com/api/films/1/",
+        "https://example.com/api/films/2/"
+      ],
+      "created": "2025-12-03T22:00:00Z",
+      "edited": "2025-12-03T22:00:00Z",
+      "url": "https://example.com/api/planets/managua/"
+    }
+  ]
+]

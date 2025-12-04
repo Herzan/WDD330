@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Home",
+    "url": "/"
+  },
+  {
+    "title": "Destination",
+    "url": "/destination/",
+    "submenu": [
+  
+       {
+        "title": "Somoto",
+        "url": "/destination/?name=somoto"
+      },
+      {
+        "title": "Leon",
+        "url": "/destination/?name=leon"
+      },
+      {
+        "title": "Granada",
+        "url": "/destination/?name=granada"
+      },
+      {
+        "title": "San Juan del Sur",
+        "url": "/destination/?name=juan"
+      },
+       {
+        "title": "Matagalpa",
+        "url": "/destination/?name=matagalpa"
+      },
+      {
+        "title": "Bluefields",
+        "url": "/destination/?name=bluefields"
+      },
+            {
+        "title": "Managua",
+        "url": "/destination/?name=managua"
+      },
+       {
+        "title": "Chinandega",
+        "url": "/destination/?name=chinandega"
+      },
+      {
+        "title": "Masaya",
+        "url": "/destination/?name=masaya"
+      },
+      {
+        "title": "Boaco",
+        "url": "/destination/?name=boaco"
+      },
+       {
+        "title": "Carazo",
+        "url": "/destination/?name=carazo"
+      },
+      {
+        "title": "Chontales",
+        "url": "/destination/?name=chontales"
+      },
+      {
+        "title": "Esteli",
+        "url": "/destination/?name=esteli"
+      },
+      {
+        "title": "Jinotega",
+        "url": "/destination/?name=jinotega"
+      },
+      {
+        "title": "Madriz",
+        "url": "/destination/?name=madriz"
+      },
+      {
+        "title": "Nueva Segovia",
+        "url": "/destination/?name=segovia"
+      },
+      {
+        "title": "Rio San Juan",
+        "url": "/destination/?name=rio"
+      }
+    ]
+  },
+  {
+    "title": "About",
+    "url": "/about/"
+  }
+]

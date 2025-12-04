@@ -1,0 +1,39 @@
+{
+  "name": "galactic-travels",
+  "version": "1.0.0",
+  "description": "WDD 330 Final Project",
+  "main": "main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "font-awesome": "^4.7.0",
+    "node": "^20.15.0",
+    "prettier": "^3.3.2"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "fandomscraper": "^1.0.4",
+    "vite": "^5.3.1"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "lint": "eslint *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+    "prep": "lint && format",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Branderwall/wdd330-final.git"
+  },
+  "author": "Adam Tan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Branderwall/wdd330-final/issues"
+  },
+  "homepage": "https://github.com/Branderwall/wdd330-final#readme"
+}

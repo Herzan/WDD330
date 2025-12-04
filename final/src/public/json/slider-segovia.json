@@ -1,0 +1,12 @@
+{
+  "images": [
+       {
+      "src": "/images/segovia.jpeg",
+      "alt": "A serene river in Nueva Segovia flowing through dense forests and scenic valleys"
+    },
+    {
+      "src": "/images/segovia.jpeg",
+      "alt": "Picturesque waterfall in Nueva Segovia surrounded by tropical greenery"
+    }
+  ]
+}

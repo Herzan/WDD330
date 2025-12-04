@@ -1,0 +1,72 @@
+{
+  "images": [
+    {
+      "src": "/images/somoto.jpg",
+      "alt": "beautiful view of Somoto Canyon with turquoise water flowing between tall rocky walls"
+    },
+    {
+      "src": "/images/leon.jpg",
+       "alt": "Cerro Negro's dark volcanic slopes rising over the landscape with ash-covered terrain under the evening sky"
+    },
+   {
+      "src": "/images/granada.jpg",
+      "alt": "The lively Calzada street in Granada at night, lined with colorful colonial buildings, restaurants, and glowing lights"
+    },
+    {
+      "src": "/images/juan.png",
+      "alt": "Wooden boardwalk along the San Juan del Sur coastline surrounded by lush greenery and ocean views"
+    },
+    {
+      "src": "/images/matagalpa.jpg",
+      "alt": "interior view of a misty cloud forest in Matagalpa, with dense trees and sunlight filtering through the foliage"
+    },
+    {
+      "src": "/images/bluefields.jpg",
+      "alt": "Sunset over the Caribbean Sea in Bluefields, with golden light reflecting on the water and palm trees along the shore"
+    },
+    {
+      "src": "/images/managua.jpg",
+      "alt": "The Metropolitan Cathedral of Managua illuminated by the morning sun with the city skyline in the background"
+    },
+    {
+      "src": "/images/chinandega.jpg",
+       "alt": "The Cathedral of Chinandega surrounded by colorful streets and historic colonial buildings"
+    },
+    {
+      "src": "/images/masaya.jpg",
+      "alt": "The Cathedral of Masaya surrounded by colorful streets and local colonial-style buildings"
+    },
+    {
+      "src": "/images/boaco.jpeg",
+      "alt": "The Cathedral of Boaco surrounded by colorful streets and traditional colonial-style buildings"
+    },
+    {
+      "src": "/images/carazo.jpg",
+      "alt": "The Cathedral of Jinotepe in Carazo surrounded by colorful streets and colonial-style buildings"
+    },
+    {
+      "src": "/images/chontales.jpeg",
+      "alt": "The Cathedral of Juigalpa in Chontales surrounded by colorful streets and traditional colonial-style buildings"
+    },
+    {
+      "src": "/images/esteli.jpg",
+      "alt": "The Cathedral of Estelí surrounded by colorful streets and traditional colonial-style buildings"
+    },
+    {
+      "src": "/images/jinotega.jpg",
+      "alt": "The central plaza of Jinotega with traditional colonial-style buildings and colorful streets"
+    },
+    {
+      "src": "/images/madriz.jpg",
+      "alt": "The central plaza of a town in Madriz surrounded by colorful colonial-style buildings and lively streets"
+    },
+    {
+      "src": "/images/segovia.jpeg",
+      "alt": "The central plaza of a town in Nueva Segovia, Nicaragua, surrounded by colorful colonial-style buildings and lively streets"
+    },
+    {
+      "src": "/images/rio.jpg",
+      "alt": "The central plaza of a town in Nueva Segovia, Nicaragua, surrounded by colorful colonial-style buildings and lively streets"
+    }
+  ]
+}

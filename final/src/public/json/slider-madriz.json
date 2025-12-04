@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "src": "/images/somoto.jpg",
+      "alt": "The dramatic rock formations and river of Somoto Canyon in Madriz surrounded by lush greenery"
+    },
+    {
+      "src": "/images/madriz.jpg",
+      "alt": "Charming streets of a town in Madriz with traditional houses and colorful local markets"
+    }
+  ]
+}
