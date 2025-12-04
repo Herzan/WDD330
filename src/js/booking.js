@@ -48,8 +48,8 @@ function getBooking() {
   }
 
   /*
-  from=Alderaan
-  to=Coruscant
+  from=Somoto
+  to=Rio San Juan
   leave-date=2025-11-24
   arrive-date=2025-12-01
   traveler-count=3
