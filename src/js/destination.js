@@ -4,7 +4,11 @@ import renderHeaderFooter from './headerfooter';
 import { getParam } from './utils';
 
 renderHeaderFooter();
-await getDestination();
+
+// Initialize async operations
+(async function() {
+  await getDestination();
+})();
 
 async function getDestination() {
   let name = getParam('name');
