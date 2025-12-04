@@ -9,8 +9,8 @@ renderSlider('slider-home');
 bookingForm();
 
 let formTest = {
-  from: 'Alderaan',
-  to: 'Somoto',
+  from: 'Somoto',
+  to: 'Rio San Juan',
   leaveDate: '2025-11-24',
   returnDate: '2025-12-01',
   travelerCount: 3,
