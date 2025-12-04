@@ -1,319 +1,955 @@
-:root {
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* colors */
-  --primary-color: #f0a868;
-  --secondary-color: #525b0f;
-  --tertiary-color: #a4b8c4;
-  --light-grey: #d0d0d0;
-  --dark-grey: #303030;
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); */
 
-  /* sizes */
-  --font-base: 18px;
-  --small-font: 0.8em;
-  --large-font: 1.2em;
+:root {
+  /* Indiana Jones Color Palette */
+  --indiana-brown: #8B4513; /* Saddle Brown */
+  --golden-idol: #FFD700; /* Gold */
+  --desert-sand: #F4A460; /* Sandy Brown */
+  --jungle-green: #228B22; /* Forest Green */
+  --temple-stone: #D3D3D3; /* Light Gray */
+  --adventure-red: #B22222; /* Firebrick */
+  --whip-leather: #A0522D; /* Sienna */
+  --mystery-purple: #4B0082; /* Indigo */
+  --night-sky: #0A0A2A; /* Dark Blue-Black */
+  --night-sky-lite: #0A0A2ACC;
+  
+  /* Indiana Jones Themed Gradients */
+  --color-desert: linear-gradient(to top left, #F4A460, #8B4513);
+  --color-jungle: linear-gradient(to top left, #228B22, #006400);
+  --color-temple: linear-gradient(to top left, #D3D3D3, #A9A9A9);
+  --color-cave: linear-gradient(to top left, #2F4F4F, #696969);
+  --color-market: linear-gradient(to top left, #FFD700, #B8860B);
+  --color-oasis: linear-gradient(to top left, #20B2AA, #008B8B);
+  --color-canyon: linear-gradient(to top left, #CD853F, #A0522D);
 }
+
+/* Fonts for Indiana Jones Theme */
+@font-face {
+  font-family: 'Indiana Jones';
+  src:
+    url('/fonts/indiana-jones.ttf') format('truetype'),
+    url('/fonts/indiana-jones.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adventure';
+  src:
+    url('/fonts/adventure.ttf') format('truetype'),
+    url('/fonts/adventure.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Explorer';
+  src:
+    url('/fonts/explorer.ttf') format('truetype'),
+    url('/fonts/explorer.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'News Cycle', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+  background-color: var(--night-sky);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
+  background-color: var(--night-sky);
   margin: 0;
-  font-family: var(--font-body);
-  font-size: var(--font-base);
-  color: var(--dark-grey);
+  /* background: no-repeat center repeating-conic-gradient(from 0deg, var(--desert-sand) 0deg 1deg, var(--night-sky) 1deg 4deg); */
 }
-img {
-  max-width: 100%;
+
+/* Sand Animation Background */
+.sand-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(244, 164, 96, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 40% 20%, rgba(244, 164, 96, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 50%, rgba(244, 164, 96, 0.2) 3px, transparent 3px);
+  background-size: 200px 200px, 150px 150px, 300px 300px;
+  animation: sandDrift 120s linear infinite;
+  pointer-events: none;
+  z-index: -1;
 }
+
+p {
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Indiana Jones', 'Quicksand', Arial, Helvetica, sans-serif;
+  color: var(--golden-idol);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+div,
+p {
+  font-family: 'Adventure', 'News Cycle', Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+}
+
 header {
   display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-.logo {
-  line-height: 60px;
-  width: 245px;
-  overflow: hidden;
-  display: flex;
-  font-size: 30px;
-  text-align: right;
-  font-family: var(--font-headline);
-}
-.logo img {
-  width: 60px;
-  height: 60px;
-}
-.logo a {
-  text-decoration: none;
-  color: var(--font-body);
-}
-.hero {
-  position: relative;
-}
-.hero .logo {
-  position: absolute;
-  left: calc(50% - 60px);
-  bottom: -10px;
-  background-color: white;
-}
-.logo--square {
-  font-size: var(--small-font);
-  width: 110px;
-  height: 80px;
-
   flex-direction: column;
-  align-items: flex-end;
-  box-shadow: 1px 1px 4px var(--light-grey);
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-}
-.logo--square img {
-  width: 90px;
-  height: 90px;
-  margin-top: -1.3em;
-}
-.logo--square > div {
-  margin-top: -1.7em;
-}
-/* utility classes */
-.highlight {
-  color: var(--tertiary-color);
-}
-
-button {
-  padding: 0.5em 2em;
-  background-color: var(--secondary-color);
-  color: white;
-  margin: auto;
-  display: block;
-  border: 0;
-  font-size: var(--large-font);
-}
-.divider {
-  border-bottom: 2px solid var(--primary-color);
-}
-.title {
-  text-transform: capitalize;
-}
-/* End utility classes */
-
-/* Cart icon styles */
-.cart {
-  padding-top: 1em;
-  position: relative;
-  text-align: center;
-}
-
-.cart svg {
-  width: 25px;
-}
-.cart:hover svg {
-  fill: gray;
-}
-
-/* End cart icon styles */
-
-/* product grid styles */
-.product-grid {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  color: var(--dark-grey);
-  padding-left: 0;
-}
-
-.product-grid > li {
-  width: 150px;
-  /* border: 1px solid var(--light-grey); */
-  padding: 0.5em;
-  margin: 1em;
-}
-.product-grid h2 {
-  margin: 0;
-
-  font-size: 1.2em;
-}
-.product-grid a {
-  text-decoration: none;
-}
-.product-grid a:link,
-.product-grid a:visited {
-  color: var(--dark-grey);
-}
-.product-grid a:hover {
-  text-decoration: underline;
-}
-
-.mission {
-  padding: 0 0.5em;
-  /* margin: 0.5em 0; */
-  line-height: 1.3;
-  max-width: 600px;
-  margin: auto;
-}
-.products {
-  padding: 0.5em;
-}
-.product-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 0;
-}
-.product-list a {
-  text-decoration: none;
-  color: var(--dark-grey);
-}
-
-.list-total {
-  text-align: right;
-}
-.list-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.5em;
-}
-.list-footer > a {
-  /* display: block; */
-  padding: 0.3em 0.5em;
-  background-color: var(--primary-color);
-  text-decoration: none;
-  border-radius: 5px;
-}
-.list-footer a:link,
-.list-footer a:visited {
-  color: var(--dark-grey);
-}
-
-/* checkout styles */
-.checkout-form {
-  padding: 0.5em;
-}
-.checkout-form label {
-  display: block;
-}
-.checkout-form input {
-  width: 100%;
-  font-size: 1.2em;
-}
-
-.checkout-summary > ul {
-  padding-left: 0;
-  list-style-type: none;
-}
-.checkout-summary li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.checkout-summary input {
-  width: 25%;
-  font-size: 1em;
-}
-
-/* Styles for product lists */
-.product-card {
-  flex: 1 1 45%;
-  margin: 0.25em;
-  padding: 0.5em;
-  border: 1px solid var(--light-grey);
-  max-width: 250px;
-  text-align: center;
-}
-.product-card h2,
-.product-card h3,
-.product-card p {
-  margin: 0.5em 0;
-}
-
-.card__brand {
-  font-size: var(--small-font);
-}
-
-.card__name {
-  font-size: 1em;
-}
-/* End product list card */
-
-.product-detail {
-  padding: 1em;
-  max-width: 500px;
-  margin: auto;
-}
-
-.product-detail img {
-  width: 100%;
-}
-
-/* Start cart list card styles */
-.cart-card {
-  display: grid;
-  grid-template-columns: 25% auto 15%;
-  font-size: var(--small-font);
-  /* max-height: 120px; */
-  align-items: center;
-}
-
-.cart-card__image {
-  grid-row: 1/3;
-  grid-column: 1;
-}
-.cart-card p {
-  margin-top: 0;
-}
-.cart-card .card__name {
-  grid-row: 1;
-  grid-column: 2;
-}
-
-.cart-card__color {
-  grid-row: 2;
-  grid-column: 2;
-}
-
-.cart-card__quantity {
-  grid-row: 1;
-  grid-column: 3;
-}
-
-.cart-card__price {
-  grid-row: 2;
-  grid-column: 3;
-}
-
-/* alert styles */
-.alert {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em;
-  background-color: var(--primary-color);
-  border: 1px solid darkorange;
-}
-.alert > p {
-  margin: 0;
-}
-
-@media screen and (min-width: 500px) {
-  body {
-    max-width: 1080px;
-    margin: auto;
-  }
-  .mission {
-    font-size: 1.2em;
-  }
-  .cart-card {
-    font-size: inherit;
-    grid-template-columns: 150px auto 15%;
-  }
+  top: 0;
+  position: sticky;
+  z-index: 2;
 }
 
 footer {
-  font-size: var(--small-font);
-  padding: 1em;
+  text-align: center;
+  background-color: var(--indiana-brown);
+  padding: 2rem 0;
+  border-top: 5px solid var(--golden-idol);
+}
+
+input,
+label,
+select,
+button {
+  font-size: 1.25rem;
+  font-family: 'Explorer', 'News Cycle', Arial, sans-serif;
+}
+
+button {
+  border: solid 2px var(--golden-idol);
+  background-color: var(--adventure-red);
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: var(--golden-idol);
+  color: var(--adventure-red);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+button:active {
+  background-color: var(--whip-leather);
+  color: var(--golden-idol);
+  transform: translateY(1px);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+button:focus:not(:active)::after {
+  animation: whipCrack 0.5s ease-out;
+}
+
+hr {
+  margin-top: 3rem;
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--golden-idol), transparent);
+}
+
+/* Compass Animation */
+#compass {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: url('/images/compass.png') no-repeat center;
+  background-size: contain;
+  animation: spinCompass 20s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Treasure Glow Effect */
+.treasure-glow {
+  animation: treasureGlow 2s ease-in-out infinite alternate;
+}
+
+/* Site Title with Adventure Style */
+.site-title {
+  font-family: 'Indiana Jones';
+  font-size: 3.5rem;
+  line-height: 3rem;
+  color: var(--golden-idol);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+}
+
+.site-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--golden-idol), var(--adventure-red), var(--golden-idol));
+  animation: titleUnderline 3s ease-in-out infinite;
+}
+
+.header-area {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--night-sky-lite);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 2;
+  border-bottom: 3px solid var(--golden-idol);
+  backdrop-filter: blur(10px);
+}
+
+.header-menu {
+  display: block;
+  height: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.menu-open {
+  height: auto;
+  opacity: 1;
+  animation: slideDown 0.5s ease-out;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  color: var(--golden-idol);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--indiana-brown);
+  border: solid 2px var(--golden-idol);
+  cursor: pointer;
+  margin: 0.25rem 0;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  color: var(--indiana-brown);
+  background-color: var(--golden-idol);
+  transform: translateX(5px);
+}
+
+.menu-item::before {
+  content: '▶';
+  position: absolute;
+  left: -20px;
+  transition: left 0.3s ease;
+}
+
+.menu-item:hover::before {
+  left: 10px;
+}
+
+.supermenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.submenu {
+  list-style-type: none;
+}
+
+.content {
+  margin: auto;
+}
+
+.content-width {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+  position: relative;
+}
+
+.full-content-width {
+  max-width: 1280px;
+  padding: 0;
+  margin: auto;
+  position: relative;
+}
+
+.content-back {
+  background-color: var(--night-sky-lite);
+  border: 2px solid var(--golden-idol);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Map Scroll Animation */
+.map-scroll {
+  background: url('/images/treasure-map.png') repeat-x;
+  height: 100px;
+  animation: scrollMap 60s linear infinite;
+  opacity: 0.3;
+  margin: 2rem 0;
+}
+
+.hero-slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid var(--golden-idol);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+#slider {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  width: 100%;
+  max-height: 80vh;
+  height: 100%;
+  flex: 1 0 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.3);
+}
+
+.arrow-container {
+  position: relative;
+}
+
+.slide-arrow {
+position: absolute;
+  display: flex !important; /* Force display */
+  top: 50%;
+  transform: translateY(-50%); /* This centers it vertically */
+  height: 4rem;
+  background-color: var(--indiana-brown);
+  border: 3px solid var(--golden-idol);
+  width: 3rem;
+  font-size: 3rem;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  color: var(--golden-idol);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure arrows are above images */
+}
+
+.slide-arrow:hover,
+.slide-arrow:focus {
+  opacity: 1;
+  background-color: var(--golden-idol);
+  color: var(--indiana-brown);
+  transform: scale(1.1);
+}
+
+#slide-arrow-prev {
+  left: 20px;
+}
+
+#slide-arrow-next {
+  right: 20px;
+}
+
+.star-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.booking-form {
+  background-color: var(--mystery-purple);
+  color: white;
+  border: 3px solid var(--golden-idol);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.form-title {
+  margin: 0;
+  padding: 1.5rem 2rem;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--indiana-brown), var(--adventure-red));
+  color: var(--golden-idol);
+  text-align: center;
+}
+
+.booking-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  border: none;
+}
+
+.booking-fields > input {
+  flex-grow: 2;
+  padding: 0.75rem;
+  border: 2px solid var(--desert-sand);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.booking-fields > input:focus {
+  outline: none;
+  border-color: var(--golden-idol);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.flex-row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-button {
+  color: var(--golden-idol);
+  background: none;
+  border: 2px solid var(--golden-idol);
+  border-radius: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: var(--golden-idol);
+  color: var(--indiana-brown);
+}
+
+.hidden {
+  display: none;
+}
+
+#booking-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+/* Ancient Artifact Circle */
+.circle {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--golden-idol), var(--indiana-brown));
+  border-radius: 50%;
+  border: 5px solid var(--adventure-red);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  animation: artifactFloat 3s ease-in-out infinite;
+}
+
+.icon::after {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.travel-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.travel-arrow-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.travel-arrow::after {
+  content: '⇓';
+  color: var(--golden-idol);
+  font-size: 50px;
+  font-weight: 900;
+  animation: bounceArrow 1s ease-in-out infinite;
+}
+
+.travel-arrow2::after {
+  content: '⇑';
+  color: var(--golden-idol);
+  font-size: 50px;
+  font-weight: 900;
+  animation: bounceArrow 1s ease-in-out infinite;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.form-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--desert-sand);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.form-slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .form-slider {
+  background-color: var(--jungle-green);
+}
+
+input:focus + .form-slider {
+  box-shadow: 0 0 1px var(--jungle-green);
+}
+
+input:checked + .form-slider:before {
+  transform: translateX(26px);
+}
+
+label:has(+ input:required, + select:required)::after {
+  content: '*';
+  color: var(--adventure-red);
+  font-size: larger;
+  margin-left: 5px;
+}
+
+input:user-invalid {
+  box-shadow: inset 0 0 3px 3px var(--adventure-red);
+}
+
+#checkout-summary {
+  color: var(--golden-idol);
+  padding: 2rem;
+  flex-grow: 1;
+  background: linear-gradient(135deg, var(--indiana-brown), var(--mystery-purple));
+  border-radius: 10px;
+  border: 2px solid var(--golden-idol);
+}
+
+#checkout-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--night-sky-lite);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid var(--golden-idol);
+}
+
+#checkout-info {
+  padding: 2rem;
+  color: white;
+  flex-grow: 1;
+  background-color: var(--indiana-brown);
+}
+
+#checkout-submit {
+  padding: 2rem;
+  background-color: var(--mystery-purple);
+}
+
+.checkout-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: none;
+  gap: 1rem;
+}
+
+.checkout-fields > input {
+  padding: 0.75rem;
+  border: 2px solid var(--desert-sand);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.hidden-large {
+  display: flex;
+}
+
+.hidden-small {
+  display: none;
+}
+
+.flex-rev {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bill-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--golden-idol);
+}
+
+.credits {
+  font-family: 'Explorer';
+  color: var(--golden-idol);
+  font-size: 1.5rem;
+}
+
+/* Treasure Chest Opening Animation */
+.treasure-chest {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  background-color: var(--whip-leather);
+  border-radius: 5px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.treasure-chest::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  right: 10px;
+  height: 10px;
+  background-color: var(--indiana-brown);
+  border-radius: 5px 5px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.treasure-chest:hover::before {
+  transform: rotateX(180deg);
+  transform-origin: bottom;
+}
+
+.treasure-chest::after {
+  content: '💎';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.treasure-chest:hover::after {
+  opacity: 1;
+}
+
+/* Keyframe Animations */
+@keyframes sandDrift {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 200px 200px, 150px 150px, 300px 300px;
+  }
+}
+
+@keyframes spinCompass {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes treasureGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.3);
+  }
+}
+
+@keyframes titleUnderline {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollMap {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+@keyframes artifactFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes whipCrack {
+  0% {
+    opacity: 1;
+    transform: scale(0, 0) translate(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(20, 20) translate(-50%);
+  }
+}
+
+@keyframes starScroll {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(-2100px);
+  }
+}
+
+@keyframes flydown {
+  from {
+    transform: translateY(-100px);
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    height: auto;
+    opacity: 1;
+  }
+}
+
+@keyframes flyup {
+  from {
+    transform: translateY(0px);
+    height: auto;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px);
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes flyFromRight {
+  from {
+    transform: translateX(750px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes flyToRight {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(750px);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media screen and (min-width: 750px) {
+  .header-menu {
+    width: 500px;
+    float: right;
+    right: 0.5rem;
+    top: 8.5rem;
+    position: fixed;
+    animation: slideDown 0.5s ease-out;
+  }
+
+  .booking-fields {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .booking-fields > input {
+    max-width: 50%;
+  }
+
+  .travel-arrow-container {
+    flex-direction: column;
+  }
+
+  .travel-arrow::after {
+    content: '⇒';
+    animation: none;
+  }
+  
+  .travel-arrow2::after {
+    content: '⇐';
+    animation: none;
+  }
+
+  #booking-summary {
+    flex-direction: row;
+  }
+
+  .flex-rev {
+    flex-direction: row-reverse;
+  }
+
+  .hidden-large {
+    display: none;
+  }
+
+  .hidden-small {
+    display: flex;
+  }
+  
+  /* Compass position for desktop */
+  #compass {
+    width: 80px;
+    height: 80px;
+    right: 40px;
+  }
 }
